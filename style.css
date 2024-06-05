@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'Alagard'; /* Define um nome para a fonte */
+    src: url('font/alagard.ttf') format('opentype'); /* Caminho para a fonte */
+  }
+  
+  @font-face {
+    font-family: '8-bit Arcade In'; 
+    src: url('font/8-bit\ Arcade\ In.ttf') format('opentype'); 
+    }
+  
+  body {
+
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #2b7f3c;
+
+  }
+  
+  
+  #game {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: url('imgs/background.png') repeat-x;
+    background-size: cover;
+  }
+  
+  #dragon {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: url('imgs/wyvern.gif') no-repeat center center;
+    background-size: cover;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    filter: drop-shadow(0px 0px 5px #686868);
+  }
+  
+  .pipe {
+    position: absolute;
+    width: 80px;
+    height: 370px;
+    background-image: url(imgs/treee.jpg);
+    
+    background-size: 80px 370px, 100% 100%;
+    bottom: 0;
+    animation: movePipe 4s linear infinite;
+    z-index: 5;
+   
+  }
+  
+  .pipe.top {
+    bottom: auto;
+    top: 0;
+  }
+  
+  .pipe.paused {
+    animation-play-state: paused;
+  }
+  
+  #score {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #b59f0e;
+    font-family: 'Alagard', Arial, sans-serif;;
+    z-index: 15;
+    text-shadow: 2px 2px 7px #494949;
+  }
+  
+  @keyframes deflate {
+      0% { transform: translate(-50%) scale(1.5); }
+      100% { transform: translate(-50%) scale(1); }
+  }
+  
+  #score.deflate {
+      animation: deflate 0.2s forwards;
+  }
+  
+  @keyframes movePipe {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -60px;
+    }
+  }
+  
+  #initial-screen,
+  #death-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'alagard', Arial, sans-serif;;
+    font-size: 24px;
+    z-index: 20;
+    text-shadow: 2px 2px 7px #000000;
+  }
+  
+  #death-screen {
+    display: none;
+  }
+  
+  #initial-screen img {
+    width: 700px;
+    height: auto;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  #initial-screen p {
+    animation: blink 2.5s infinite;
+  }
+  
+  #death-screen h1 {
+    color: #790909; 
+    margin-top: 10px;
+    
+  }
+  
+  #death-screen p {
+    animation: blink 2.5s infinite;
+  }
+  
+  #record {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #bb7924;
+    font-family: 'Alagard', Arial, sans-serif;
+    z-index: 15;
+    text-shadow: 2px 2px 7px #494949;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #initial-record {
+    font-size: 24px;
+    color: #bb7924;
+    font-family: 'Alagard', Arial, sans-serif;
+    z-index: 15;
+    text-shadow: 2px 2px 7px #494949;
+    font-size: 3rem; 
+    animation: none !important; 
+    margin-top: -30px;
+  }
+  #initial-screen {
+    background-color: #000000;
+  }

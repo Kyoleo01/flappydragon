@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Dragon</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div id="game">
+        
+        <div id="dragon"></div>
+        
+        
+        <div id="score">0</div>
+
+       
+        <div id="record">Recorde: 0</div>
+        
+       
+        <div id="initial-screen">
+            <img src= "imgs/logo.jpeg" alt="logo">
+        
+        <p id="initial-record"></p>
+        
+        <p>Press "Space Button" to start</p>
+        </div>
+
+       
+        <div id="death-screen">
+            <h1>YOU DIED</h1>
+            <h3>Your score: <span id="final-score"></span></h3>
+            <p>Press "Space" to restart</p>
+        </div>
+    </div>
+
+   
+    <audio id="background-music" loop>
+        <source src="audio/Undertale OST - 073 The Choice.mp3" type="audio/mpeg">
+    </audio> 
+
+    <audio id="jump-music">
+        <source src="audio/wingflap1.wav" type="audio/mpeg">
+    </audio> 
+
+    <audio id="end-music">
+        <source src="audio/youdied.mp3" type="audio/mpeg">
+    </audio> 
+
+   
+    <script src="script.js"></script>
+</body>
+</html>
